@@ -13,7 +13,8 @@ namespace Simon
 {
     public partial class GameScreen : UserControl
     {
-        int patternPlace;
+        public static int patternPlace;
+
         public GameScreen()
         {
             InitializeComponent();
@@ -31,11 +32,11 @@ namespace Simon
         private void ComputerTurn()
         {
             Random rand = new Random();
-            Form1.pattern.Add(rand.Next(4));
+            Form1.pattern.Add(rand.Next(0,4));
 
             for (int i = 0; i < Form1.pattern.Count; i++)
             {
-                Thread.Sleep(500);
+                Thread.Sleep(700);
 
                 switch (Form1.pattern[i])
                 {
@@ -54,6 +55,7 @@ namespace Simon
                     default:
                         break;
                 }
+
                 Refresh();
                 Thread.Sleep(500);
 
@@ -75,49 +77,49 @@ namespace Simon
                 greenButton.BackColor = Color.Green;
 
                 patternPlace++;
-                if(patternPlace == 5) { ComputerTurn(); }
+                if(patternPlace == Form1.pattern.Count) { ComputerTurn(); }
             }
             else { GameOver(); }
         }
 
         private void blueButton_Click(object sender, EventArgs e)
         {
-            if (Form1.pattern[patternPlace] == 0)
+            if (Form1.pattern[patternPlace] == 1)
             {
                 blueButton.BackColor = Color.LightBlue;
                 Thread.Sleep(500);
                 blueButton.BackColor = Color.Blue;
 
                 patternPlace++;
-                if (patternPlace == 5) { ComputerTurn(); }
+                if (patternPlace == Form1.pattern.Count) { ComputerTurn(); }
             }
             else { GameOver(); }
         }
 
         private void redButton_Click(object sender, EventArgs e)
         {
-            if (Form1.pattern[patternPlace] == 0)
+            if (Form1.pattern[patternPlace] == 2)
             {
                 redButton.BackColor = Color.Pink;
                 Thread.Sleep(500);
                 redButton.BackColor = Color.Red;
 
                 patternPlace++;
-                if (patternPlace == 5) { ComputerTurn(); }
+                if (patternPlace == Form1.pattern.Count) { ComputerTurn(); }
             }
             else { GameOver(); }
         }
 
         private void yellowButton_Click(object sender, EventArgs e)
         {
-            if (Form1.pattern[patternPlace] == 0)
+            if (Form1.pattern[patternPlace] == 3)
             {
                 yellowButton.BackColor = Color.LightYellow;
                 Thread.Sleep(500);
                 yellowButton.BackColor = Color.Yellow;
 
                 patternPlace++;
-                if (patternPlace == 5) { ComputerTurn(); }
+                if (patternPlace == Form1.pattern.Count ) { ComputerTurn(); }
             }
             else { GameOver(); }
         }
@@ -125,6 +127,9 @@ namespace Simon
         private void GameOver()
         {
             //play sound and call up a new screen
+            GameOverScreen go = new GameOverScreen();
+            this.Controls.Add(go);
+            go.BringToFront();
         }
     }
 }
