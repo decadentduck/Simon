@@ -24,8 +24,8 @@ namespace Simon
         {
             Form1.pattern.Clear();
             Refresh();
-            Thread.Sleep(1000);
-
+            Thread.Sleep(5000);
+            
             ComputerTurn();
         }
 

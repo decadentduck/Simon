@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Simon
 {
@@ -19,7 +20,9 @@ namespace Simon
 
         private void GameOverScreen_Load(object sender, EventArgs e)
         {
-            textLabel.Text += Convert.ToString(GameScreen.patternPlace);
+            textLabel.Text += Convert.ToString(Form1.pattern.Count() - 1);
+            Thread.Sleep(1000);
+
         }
     }
 }

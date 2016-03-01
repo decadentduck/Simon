@@ -47,7 +47,7 @@
             this.BackColor = System.Drawing.Color.Green;
             this.Controls.Add(this.textLabel);
             this.Name = "GameOverScreen";
-            this.Size = new System.Drawing.Size(493, 287);
+            this.Size = new System.Drawing.Size(478, 406);
             this.Load += new System.EventHandler(this.GameOverScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
