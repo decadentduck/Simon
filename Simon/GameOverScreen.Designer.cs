@@ -34,11 +34,12 @@
             // textLabel
             // 
             this.textLabel.AutoSize = true;
-            this.textLabel.Location = new System.Drawing.Point(159, 86);
+            this.textLabel.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textLabel.Location = new System.Drawing.Point(88, 163);
             this.textLabel.Name = "textLabel";
-            this.textLabel.Size = new System.Drawing.Size(65, 13);
+            this.textLabel.Size = new System.Drawing.Size(248, 39);
             this.textLabel.TabIndex = 0;
-            this.textLabel.Text = "Your results:";
+            this.textLabel.Text = "Your results: ";
             // 
             // GameOverScreen
             // 
@@ -47,8 +48,9 @@
             this.BackColor = System.Drawing.Color.Green;
             this.Controls.Add(this.textLabel);
             this.Name = "GameOverScreen";
-            this.Size = new System.Drawing.Size(478, 406);
+            this.Size = new System.Drawing.Size(490, 390);
             this.Load += new System.EventHandler(this.GameOverScreen_Load);
+            this.Click += new System.EventHandler(this.GameOverScreen_click);
             this.ResumeLayout(false);
             this.PerformLayout();
 

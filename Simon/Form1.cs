@@ -17,18 +17,9 @@ namespace Simon
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void startButton_Click(object sender, EventArgs e)
-        {
-            GameScreen gs = new GameScreen();
-            this.Controls.Add(gs);
-            gs.BringToFront();
-        }
-
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            MainScreen ms = new MainScreen();
+            this.Controls.Add(ms);
+            ms.BringToFront();
         }
     }
 }

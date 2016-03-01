@@ -21,8 +21,13 @@ namespace Simon
         private void GameOverScreen_Load(object sender, EventArgs e)
         {
             textLabel.Text += Convert.ToString(Form1.pattern.Count() - 1);
-            Thread.Sleep(1000);
+        }
 
+        private void GameOverScreen_click(object sender, EventArgs e)
+        {
+            MainScreen ms = new MainScreen();
+            this.Controls.Add(ms);
+            ms.BringToFront();
         }
     }
 }
