@@ -31,6 +31,7 @@ namespace Simon
 
         private void ComputerTurn()
         {
+            Thread.Sleep(500);
             Random rand = new Random();
             Form1.pattern.Add(rand.Next(0,4));
 
@@ -75,8 +76,10 @@ namespace Simon
             if (Form1.pattern[patternPlace] == 0)
             {
                 greenButton.BackColor = Color.LightGreen;
+                Refresh();
                 Thread.Sleep(1000);
                 greenButton.BackColor = Color.Green;
+                Refresh();
 
                 patternPlace++;
                 if(patternPlace == Form1.pattern.Count) { ComputerTurn(); }
@@ -89,8 +92,10 @@ namespace Simon
             if (Form1.pattern[patternPlace] == 1)
             {
                 blueButton.BackColor = Color.LightBlue;
+                Refresh();
                 Thread.Sleep(1000);
                 blueButton.BackColor = Color.Blue;
+                Refresh();
 
                 patternPlace++;
                 if (patternPlace == Form1.pattern.Count) { ComputerTurn(); }
@@ -103,8 +108,10 @@ namespace Simon
             if (Form1.pattern[patternPlace] == 2)
             {
                 redButton.BackColor = Color.Pink;
+                Refresh();
                 Thread.Sleep(1000);
                 redButton.BackColor = Color.Red;
+                Refresh();
 
                 patternPlace++;
                 if (patternPlace == Form1.pattern.Count) { ComputerTurn(); }
@@ -117,8 +124,10 @@ namespace Simon
             if (Form1.pattern[patternPlace] == 3)
             {
                 yellowButton.BackColor = Color.LightYellow;
+                Refresh();
                 Thread.Sleep(1000);
                 yellowButton.BackColor = Color.Yellow;
+                Refresh();
 
                 patternPlace++;
                 if (patternPlace == Form1.pattern.Count ) { ComputerTurn(); }
