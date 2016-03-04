@@ -19,7 +19,6 @@ namespace Simon
             InitializeComponent();
             MainScreen ms = new MainScreen();
             this.Controls.Add(ms);
-            ms.BringToFront();
         }
     }
 }

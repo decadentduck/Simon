@@ -57,13 +57,14 @@ namespace Simon
                 }
 
                 Refresh();
-                Thread.Sleep(500);
+                Thread.Sleep(400);
 
                 greenButton.BackColor = Color.Green;
                 blueButton.BackColor = Color.Blue;
                 redButton.BackColor = Color.Red;
                 yellowButton.BackColor = Color.Yellow;
 
+                Refresh();
                 Thread.Sleep(700);
 
             }
@@ -77,7 +78,7 @@ namespace Simon
             {
                 greenButton.BackColor = Color.LightGreen;
                 Refresh();
-                Thread.Sleep(1000);
+                Thread.Sleep(700);
                 greenButton.BackColor = Color.Green;
                 Refresh();
 
@@ -93,7 +94,7 @@ namespace Simon
             {
                 blueButton.BackColor = Color.LightBlue;
                 Refresh();
-                Thread.Sleep(1000);
+                Thread.Sleep(700);
                 blueButton.BackColor = Color.Blue;
                 Refresh();
 
@@ -109,7 +110,7 @@ namespace Simon
             {
                 redButton.BackColor = Color.Pink;
                 Refresh();
-                Thread.Sleep(1000);
+                Thread.Sleep(700);
                 redButton.BackColor = Color.Red;
                 Refresh();
 
@@ -125,7 +126,7 @@ namespace Simon
             {
                 yellowButton.BackColor = Color.LightYellow;
                 Refresh();
-                Thread.Sleep(1000);
+                Thread.Sleep(700);
                 yellowButton.BackColor = Color.Yellow;
                 Refresh();
 
@@ -137,10 +138,12 @@ namespace Simon
 
         private void GameOver()
         {
-            //play sound and call up a new screen
+            //TODO play sound and call up a new screen
+            Form f = this.FindForm();
+            f.Controls.Remove(this);
+
             GameOverScreen go = new GameOverScreen();
-            this.Controls.Add(go);
-            go.BringToFront();
+            f.Controls.Add(go);
         }
     }
 }

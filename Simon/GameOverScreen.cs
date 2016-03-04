@@ -25,9 +25,12 @@ namespace Simon
 
         private void GameOverScreen_click(object sender, EventArgs e)
         {
+            Form f = this.FindForm();
+            f.Controls.Remove(this);
+
             MainScreen ms = new MainScreen();
-            this.Controls.Add(ms);
-            ms.BringToFront();
+            f.Controls.Add(ms);
+
         }
     }
 }
