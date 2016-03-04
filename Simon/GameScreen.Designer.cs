@@ -87,7 +87,7 @@
             this.turnLabel.Name = "turnLabel";
             this.turnLabel.Size = new System.Drawing.Size(302, 23);
             this.turnLabel.TabIndex = 4;
-            this.turnLabel.Text = "Computer\'s Turn";
+            this.turnLabel.Text = "Please Wait";
             this.turnLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GameScreen
