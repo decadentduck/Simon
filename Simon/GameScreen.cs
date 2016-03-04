@@ -34,7 +34,7 @@ namespace Simon
             Thread.Sleep(500);
             Random rand = new Random();
             Form1.pattern.Add(rand.Next(0,4));
-
+            //TODO Add audio when buttons flash
             for (int i = 0; i < Form1.pattern.Count; i++)
             {
                 
@@ -57,7 +57,7 @@ namespace Simon
                 }
 
                 Refresh();
-                Thread.Sleep(400);
+                Thread.Sleep(500);
 
                 greenButton.BackColor = Color.Green;
                 blueButton.BackColor = Color.Blue;
@@ -65,7 +65,7 @@ namespace Simon
                 yellowButton.BackColor = Color.Yellow;
 
                 Refresh();
-                Thread.Sleep(700);
+                Thread.Sleep(600);
 
             }
 
@@ -74,6 +74,7 @@ namespace Simon
 
         private void greenButton_Click(object sender, EventArgs e)
         {
+            //TODO AUDIO green
             if (Form1.pattern[patternPlace] == 0)
             {
                 greenButton.BackColor = Color.LightGreen;
@@ -90,6 +91,7 @@ namespace Simon
 
         private void blueButton_Click(object sender, EventArgs e)
         {
+            //TODO Audio BLUE
             if (Form1.pattern[patternPlace] == 1)
             {
                 blueButton.BackColor = Color.LightBlue;
@@ -106,6 +108,7 @@ namespace Simon
 
         private void redButton_Click(object sender, EventArgs e)
         {
+            //TODO audio Red
             if (Form1.pattern[patternPlace] == 2)
             {
                 redButton.BackColor = Color.Pink;
@@ -122,6 +125,7 @@ namespace Simon
 
         private void yellowButton_Click(object sender, EventArgs e)
         {
+            //TODO audio yellow
             if (Form1.pattern[patternPlace] == 3)
             {
                 yellowButton.BackColor = Color.LightYellow;
@@ -138,7 +142,7 @@ namespace Simon
 
         private void GameOver()
         {
-            //TODO play sound and call up a new screen
+            //TODO play sound 
             Form f = this.FindForm();
             f.Controls.Remove(this);
 
