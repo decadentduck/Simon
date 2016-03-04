@@ -32,6 +32,7 @@
             this.blueButton = new System.Windows.Forms.Button();
             this.greenButton = new System.Windows.Forms.Button();
             this.yellowButton = new System.Windows.Forms.Button();
+            this.turnLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // redButton
@@ -78,11 +79,23 @@
             this.yellowButton.UseVisualStyleBackColor = false;
             this.yellowButton.Click += new System.EventHandler(this.yellowButton_Click);
             // 
+            // turnLabel
+            // 
+            this.turnLabel.Font = new System.Drawing.Font("Rockwell", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.turnLabel.ForeColor = System.Drawing.Color.DarkGreen;
+            this.turnLabel.Location = new System.Drawing.Point(84, 39);
+            this.turnLabel.Name = "turnLabel";
+            this.turnLabel.Size = new System.Drawing.Size(302, 23);
+            this.turnLabel.TabIndex = 4;
+            this.turnLabel.Text = "Computer\'s Turn";
+            this.turnLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
+            this.Controls.Add(this.turnLabel);
             this.Controls.Add(this.yellowButton);
             this.Controls.Add(this.greenButton);
             this.Controls.Add(this.blueButton);
@@ -100,5 +113,6 @@
         private System.Windows.Forms.Button blueButton;
         private System.Windows.Forms.Button greenButton;
         private System.Windows.Forms.Button yellowButton;
+        private System.Windows.Forms.Label turnLabel;
     }
 }

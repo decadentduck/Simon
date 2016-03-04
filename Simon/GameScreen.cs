@@ -31,10 +31,14 @@ namespace Simon
 
         private void ComputerTurn()
         {
+            turnLabel.Text = "Computer's Turn";
             Thread.Sleep(500);
+
             Random rand = new Random();
             Form1.pattern.Add(rand.Next(0,4));
+
             //TODO Add audio when buttons flash
+
             for (int i = 0; i < Form1.pattern.Count; i++)
             {
                 
@@ -70,6 +74,7 @@ namespace Simon
             }
 
             patternPlace = 0;
+            turnLabel.Text = "Your Turn";
         }
 
         private void greenButton_Click(object sender, EventArgs e)
