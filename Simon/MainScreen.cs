@@ -28,7 +28,7 @@ namespace Simon
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            //This no longer works
+            Application.Exit();
         }
     }
 }

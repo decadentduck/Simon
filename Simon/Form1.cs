@@ -20,5 +20,6 @@ namespace Simon
             MainScreen ms = new MainScreen();
             this.Controls.Add(ms);
         }
+        
     }
 }
