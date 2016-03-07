@@ -8,12 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 namespace Simon
 {
     public partial class GameScreen : UserControl
     {
         public static int patternPlace;
+        SoundPlayer green = new SoundPlayer(Properties.Resources.green);
+        SoundPlayer blue = new SoundPlayer(Properties.Resources.blue);
+        SoundPlayer yellow = new SoundPlayer(Properties.Resources.yellow);
+        SoundPlayer red = new SoundPlayer(Properties.Resources.red);
+        SoundPlayer wrong = new SoundPlayer(Properties.Resources.mistake);
 
         public GameScreen()
         {
@@ -37,8 +43,6 @@ namespace Simon
             Random rand = new Random();
             Form1.pattern.Add(rand.Next(0,4));
 
-            //TODO Add audio when buttons flash
-
             for (int i = 0; i < Form1.pattern.Count; i++)
             {
                 
@@ -46,15 +50,19 @@ namespace Simon
                 {
                     case 0:
                         greenButton.BackColor = Color.LightGreen;
+                        green.Play();
                         break;
                     case 1:
                         blueButton.BackColor = Color.LightBlue;
+                        blue.Play();
                         break;
                     case 2:
                         redButton.BackColor = Color.Pink;
+                        red.Play();
                         break;
                     case 3:
                         yellowButton.BackColor = Color.LightYellow;
+                        yellow.Play();
                         break;
                     default:
                         break;
@@ -79,9 +87,9 @@ namespace Simon
 
         private void greenButton_Click(object sender, EventArgs e)
         {
-            //TODO AUDIO green
             if (Form1.pattern[patternPlace] == 0)
             {
+                green.Play();
                 greenButton.BackColor = Color.LightGreen;
                 Refresh();
                 Thread.Sleep(700);
@@ -96,9 +104,9 @@ namespace Simon
 
         private void blueButton_Click(object sender, EventArgs e)
         {
-            //TODO Audio BLUE
             if (Form1.pattern[patternPlace] == 1)
             {
+                blue.Play();
                 blueButton.BackColor = Color.LightBlue;
                 Refresh();
                 Thread.Sleep(700);
@@ -113,9 +121,9 @@ namespace Simon
 
         private void redButton_Click(object sender, EventArgs e)
         {
-            //TODO audio Red
             if (Form1.pattern[patternPlace] == 2)
             {
+                red.Play();
                 redButton.BackColor = Color.Pink;
                 Refresh();
                 Thread.Sleep(700);
@@ -130,9 +138,9 @@ namespace Simon
 
         private void yellowButton_Click(object sender, EventArgs e)
         {
-            //TODO audio yellow
             if (Form1.pattern[patternPlace] == 3)
             {
+                yellow.Play();
                 yellowButton.BackColor = Color.LightYellow;
                 Refresh();
                 Thread.Sleep(700);
@@ -147,7 +155,7 @@ namespace Simon
 
         private void GameOver()
         {
-            //TODO play sound 
+            wrong.Play();
             Form f = this.FindForm();
             f.Controls.Remove(this);
 
