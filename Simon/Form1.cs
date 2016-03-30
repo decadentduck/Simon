@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+Created by Kaitlyn Ewing probably in February 
+Simon Program 
+game based off of the original simon game
+*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

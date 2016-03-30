@@ -15,6 +15,8 @@ namespace Simon
     public partial class GameScreen : UserControl
     {
         public static int patternPlace;
+
+        //SoundPlayer[]
         SoundPlayer green = new SoundPlayer(Properties.Resources.green);
         SoundPlayer blue = new SoundPlayer(Properties.Resources.blue);
         SoundPlayer yellow = new SoundPlayer(Properties.Resources.yellow);
@@ -35,6 +37,10 @@ namespace Simon
             ComputerTurn();
         }
 
+        /// <summary>
+        /// Creates the Computers random pattern that the user needs to follow. 
+        /// Then flashes colours in the pattern order and plays sounds.
+        /// </summary>
         private void ComputerTurn()
         {
             turnLabel.Text = "Computer's Turn";
@@ -85,6 +91,13 @@ namespace Simon
             turnLabel.Text = "Your Turn";
         }
 
+        /// <summary>
+        /// For each button click the program will compare the user's input to the pattern they are supposed to be following
+        /// if they get the pattern correct it will go to the computer turn to add to the pattern
+        /// if the input does not match it goes to the game over screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void greenButton_Click(object sender, EventArgs e)
         {
             if (Form1.pattern[patternPlace] == 0)
